@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      width: 400px;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+    h1 {
+      font-size: 20px;
+      margin-bottom: 16px;
+      color: #2563eb;
+      text-align: center;
+    }
+    #summary {
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .bullet-point {
+      margin: 12px 0;
+      padding: 12px 12px 12px 36px;
+      position: relative;
+      background: #f8f9fa;
+      border-radius: 8px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      animation: fadeIn 0.5s ease-in;
+    }
+    .bullet-number {
+      position: absolute;
+      left: 12px;
+      color: #2563eb;
+      font-weight: 600;
+    }
+    #loading {
+      text-align: center;
+      padding: 20px;
+    }
+    .loading-spinner {
+      width: 28px;
+      height: 28px;
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #2563eb;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 10px auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    #error {
+      color: #dc2626;
+      padding: 12px;
+      display: none;
+      margin-top: 12px;
+      background-color: #fef2f2;
+      border-radius: 8px;
+      font-size: 14px;
+      border: 1px solid #fee2e2;
+    }
+    .note {
+      font-size: 12px;
+      color: #555;
+      text-align: center;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Article Summarizer</h1>
+  <div id="loading">
+    <div class="loading-spinner"></div>
+    <div>Analyzing with AI...</div>
+  </div>
+  <div id="error"></div>
+  <div id="summary"></div>
+  <div class="note">AI can make mistakes :)</div>
+  <script src="config.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
